@@ -1,7 +1,7 @@
 '''
 
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
 #GPIO Ports Setup
@@ -30,16 +30,17 @@ import os
 import _thread as thread
 
 #GPIO Ports Numbers
-RED_LED = 4
-BLUE_LED = 17
-WIRES_VCC = 27
-BUZZER = 21
-WIRE1 = 24
-WIRE2 = 25
-WIRE3 = 5
-WIRE4 = 6 
-WIRE5 = 13
-WIRE6 = 20
+RED_LED = 7 #Change the LED wire to GPIO4
+BLUE_LED = 11
+BUZZER = 40
+
+WIRES_VCC = 13 #GPIO27
+WIRE1 = 18	#GPIO24
+WIRE2 = 22	#GPIO25
+WIRE3 = 29	#GPIO5	
+WIRE4 = 31	#GPIO6 
+WIRE5 = 33	#GPIO13
+WIRE6 = 38	#GPIO20
 
 #Path to the Safe box folder
 path = "~/git/Safe\ Box"
