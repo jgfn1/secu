@@ -109,6 +109,22 @@ def auto_destroy():
 						break
 	if(time_left == 0):
 		print("Time is up, the bomb has exploded!")
+		time.sleep(0.3)
+		#os.system("sudo shutdown now")
+
+'''Open ~/.bash_aliases for editing.
+
+nano ~/.bash_aliases
+Insert the following line at the end of the file:
+
+alias shutdown='sudo shutdown now' 
+Finally, load the changes to the .bash_aliases file...
+
+source ~/.bash_aliases
+Try it out!
+
+shutdown'''
+
 		#exploded()
 #	thread.start_new_thread(disarmed, ())
 
@@ -139,7 +155,9 @@ def folder_unlocked():
 	os.system("rm -rf " + path)
 	os.system("mkdir " + path)
 	os.system("cd " + path)
-	os.system("echo $(date +%s) > " + path + "/access_time.txt")
+	#os.system("echo $(date +%s) > " + path + "/access_time.txt")
+	os.system("cp epoch_time " + path)
+	os.system("cd Safe\ Box && ./epoch_time")
 	access_time = os.popen("date +%s").read()
 	# print("Access Time: " + str(access_time))
 	#Try to send it to an email address.
